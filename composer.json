@@ -1,0 +1,15 @@
+{
+    "name": "hp/npsscale",
+    "autoload": {
+        "psr-4": {
+            "Hp\\npsscale\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "abatetsegaye1",
+            "email": "abatetsegaye12@gmail.com"
+        }
+    ],
+    "require": {}
+}

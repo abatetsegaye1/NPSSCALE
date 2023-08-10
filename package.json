@@ -1,0 +1,17 @@
+{
+  "name": "npsscale",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "wp-scripts build",
+    "start": "wp-scripts start"
+  },
+  "author": "Abate",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^26.9.0"
+  },
+  "dependencies": {},
+  "description": ""
+}

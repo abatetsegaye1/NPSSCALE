@@ -1,0 +1,15 @@
+// style={{}}
+.scale_container{
+    
+    height:90%;
+    width:90%;
+    overflow: scroll;
+    display:flex;
+    flex-direction:row;
+    justify-content:flex-start;
+     flex-wrap: wrap;
+    padding:10px;
+    margin:50px;
+    gap: 10px;
+    row-gap: 10px;
+}
