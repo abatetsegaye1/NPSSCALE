@@ -18,10 +18,9 @@
   display: flex;
   justify-content: space-between;
 }
-.sidebar .setting_configure button:first-of-type {
-  width: 85px;
+.sidebar .setting_configure .setting_button {
+  width: auto;
   border: none;
-  border-bottom: 3px solid #6E62E5;
   color: #2E3134;
   text-align: center;
   font-family: Roboto;
@@ -32,8 +31,8 @@
   background: inherit;
   cursor: pointer;
 }
-.sidebar .setting_configure button:last-of-type {
-  width: 85px;
+.sidebar .setting_configure .configure_button {
+  width: auto;
   border: none;
   color: #2E3134;
   text-align: center;
@@ -200,6 +199,8 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
 }
 .sidebar .sidebar_setting .sidebar_element_four .Scale_format div {
   display: flex;
@@ -500,6 +501,129 @@
   line-height: normal;
   cursor: pointer;
 }
+.sidebar .configure_element {
+  height: 50vh;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+}
+.sidebar .configure_element .configure_element--one {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 20px;
+}
+.sidebar .configure_element .configure_element--one .configure--title {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sidebar .configure_element .configure_element--one .configure--title .label--title {
+  color: #000;
+  font-family: Roboto;
+  font-size: 14.029px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.421px;
+}
+.sidebar .configure_element .configure_element--one .configure--title input {
+  width: 342px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 6.965px;
+  background: #EBEBEB;
+  color: black;
+}
+.sidebar .configure_element .configure_element--one .configure--question {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sidebar .configure_element .configure_element--one .configure--question .label--question {
+  color: #000;
+  font-family: Roboto;
+  font-size: 14.029px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.421px;
+}
+.sidebar .configure_element .configure_element--one .configure--question input {
+  width: 342px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 6.965px;
+  background: #EBEBEB;
+  color: black;
+}
+.sidebar .configure_element .configure_element--two {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  border: none;
+  border-top: 2px solid #D4D4D4;
+  padding-top: 30px;
+}
+.sidebar .configure_element .configure_element--two .configuration_font--color {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sidebar .configure_element .configure_element--two .configuration_font--color .font_label--color {
+  color: #000;
+  font-family: Roboto;
+  font-size: 14.029px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.421px;
+  margin-bottom: 7px;
+}
+.sidebar .configure_element .configure_element--two .configuration_font--color input {
+  width: 80%;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 6.965px;
+  background: #EBEBEB;
+  color: black;
+}
+.sidebar .configure_element .configure_element--two .configuration_font--style {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sidebar .configure_element .configure_element--two .configuration_font--style .font_select_label {
+  color: #000;
+  font-family: Roboto;
+  font-size: 14.029px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.421px;
+  margin-bottom: 7px;
+}
+.sidebar .configure_element .configure_element--two .configuration_font--style .configure_font--select {
+  width: 90%;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 6.965px;
+  background: #EBEBEB;
+  color: black;
+}
 /*!**********************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/components/templatestyle.scss ***!
   \**********************************************************************************************************************************************************************************************************************************************************/
@@ -512,14 +636,13 @@
   flex-wrap: wrap;
   padding: 10px;
   margin: 50px;
-  -moz-column-gap: 5px;
-       column-gap: 5px;
-  row-gap: 5px;
+  -moz-column-gap: 1px;
+       column-gap: 1px;
+  row-gap: 1px;
 }
 .scale_container .frame {
   position: relative;
-  margin: 50px;
-  width: 30%;
+  width: 40%;
   margin: 10px auto;
   height: 20rem;
   flex-shrink: 0;
@@ -567,26 +690,41 @@
   background: #FDFBF5;
   margin-top: 30px;
 }
+.scale_container .frame .frame__scale .scale_title {
+  color: #1C2B48;
+  text-align: center;
+  font-family: Inter;
+  font-size: 18.896px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 6px;
+}
 .scale_container .frame .frame__scale .scale_typo {
+  width: 100%;
   color: #394869;
   font-family: Inter;
-  font-size: 13.296px;
+  font-size: 14.296px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   color: #394869;
+  display: flex;
+  padding-left: 30px;
+  justify-content: flex-start;
   letter-spacing: 0.532px;
 }
 .scale_container .frame .frame__scale .scale__buttons {
   display: flex;
-  justify-content: center;
+  width: 90%;
+  justify-content: flex-start;
   align-items: center;
-  -moz-column-gap: 4px;
-       column-gap: 4px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 .scale_container .frame .frame__scale .scale__buttons .emoji {
-  width: 37.919px;
-  height: 37.919px;
+  width: 17.919px;
+  height: 17.919px;
   flex-shrink: 0;
   border: none;
   cursor: pointer;

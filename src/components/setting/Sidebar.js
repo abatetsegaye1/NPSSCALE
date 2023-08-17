@@ -1,12 +1,14 @@
-import {React,useContext} from 'react'
+import {React,useContext,useState} from 'react'
 
 import './sidebar.scss'
 import Scale from './Scale'
 import { ScaleContext } from '../ScaleContext'
+import Configuration from './Configuration';
 export default function Sidebar({row,emoji,btnbg,btncolr}) {
   //console.log(scaleContent);
+  const [setting,setSetting] = useState(true);
   const { state, dispatch } = useContext(ScaleContext);
-
+ 
 
   const handleScaleColorChange = (e) => {
     const newColor = e.target.value;
@@ -72,26 +74,21 @@ export default function Sidebar({row,emoji,btnbg,btncolr}) {
   };
 
 
-  const handleScaleRangeChange = (property, value) => {
-    dispatch({
-      type: 'SET_SCALE_RANGE',
-      payload: {
-        sclRangefromA: property === 'fromA' ? value : state.scale.sclRangefromA,
-        sclRangetoB: property === 'toB' ? value : state.scale.sclRangetoB,
-      },
-    });
-  };
+ 
 
   return (
     <>
     <div className='sidebar'>
     <div className='setting_configure'>
-    <button>Setting</button>
-    <button>Configurations</button>
+    <button className='setting_button' onClick={()=>setSetting(true)} style={{borderBottom: `${setting ? '3px solid #6E62E5':''}`}}>Setting</button>
+    <button className='configure_button' onClick={()=>setSetting(false)} style={{borderBottom: `${!setting ? '3px solid #6E62E5':''}`}}>Configurations</button>
     </div>
      <div className='sidebar_setting'>
         {/* <div className='sidebar_wrapper'> */}
-          <div className='sidebar_element--one'>
+      
+        {setting ? (
+            <>
+         <div className='sidebar_element--one'>
           <label for="scale_orient" className='orient_label'>Scale Orientation</label>
             <select id="scale_orient" name="orientation" className='orient_select'
             
@@ -164,13 +161,7 @@ export default function Sidebar({row,emoji,btnbg,btncolr}) {
                 />
                 <label for="number">Number</label>
                 </div>
-                <div>
-                <input type="radio" id="image" name="options" value="image"
-                checked={state.scale.format === 'image'}
-                onChange={() => handleScaleFormatChange('image')}
-                />
-                <label for="image">Image</label>
-                </div>
+               
             </div>
           </div>
 
@@ -272,8 +263,16 @@ export default function Sidebar({row,emoji,btnbg,btncolr}) {
 </svg></button>
            </div>
         </div>
+
+            
+            </>
+
+        ):(<Configuration/>)}
+          
+       
        <button className='use_scale'>Use Scale</button>
         </div>
+        
      </div>
      <Scale row={row} emoji={emoji} btnbg={btnbg} btncolr={btncolr}/>
      </>

@@ -13,10 +13,9 @@
     width: 80%;
     display: flex;
     justify-content: space-between;
-    button:first-of-type{
-        width: 85px;
+    .setting_button{
+        width: auto;
         border: none;
-        border-bottom: 3px solid #6E62E5;
         color: #2E3134;
         text-align: center;
         font-family: Roboto;
@@ -27,8 +26,8 @@
         background: inherit;
         cursor: pointer;
     }
-    button:last-of-type{
-        width: 85px;
+    .configure_button{
+        width: auto;
         border: none;
         color: #2E3134;
         text-align: center;
@@ -201,6 +200,7 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
+        column-gap: 40px;
         div{
             display: flex;
             flex-direction: row;
@@ -522,4 +522,135 @@
     cursor: pointer;
  }
 
+ .configure_element{
+      height: 50vh;
+      width: 95%;
+      display: flex;
+      flex-direction: column;
+      row-gap: 50px;
+      .configure_element--one{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 20px;
+        .configure--title{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+           .label--title{
+            color: #000;
+            font-family: Roboto;
+            font-size: 14.029px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0.421px;
+           } 
+        input{
+            width: 342px;
+            height: 26px;
+            flex-shrink: 0;
+            border-radius: 6.965px;
+            background: #EBEBEB;
+            color: black;
+        }
+        }
+
+        .configure--question{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+           .label--question{
+            color: #000;
+            font-family: Roboto;
+            font-size: 14.029px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0.421px;
+           } 
+        input{
+            width: 342px;
+            height: 26px;
+            flex-shrink: 0;
+            border-radius: 6.965px;
+            background: #EBEBEB;
+            color: black;
+        }
+      }
+    }
+      .configure_element--two{
+         width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        column-gap: 10px;
+        border: none;
+        border-top: 2px solid #D4D4D4;
+        padding-top: 30px;
+        .configuration_font--color{
+
+            
+                width: 50%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+               .font_label--color{
+                color: #000;
+                font-family: Roboto;
+                font-size: 14.029px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                letter-spacing: 0.421px;
+                margin-bottom: 7px;
+               } 
+            input{
+                width: 80%;
+                height: 26px;
+                flex-shrink: 0;
+                border-radius: 6.965px;
+                background: #EBEBEB;
+                color: black;
+            }
+          
+        }
+
+        .configuration_font--style{
+
+            
+            width: 50%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+           .font_select_label{
+            color: #000;
+            font-family: Roboto;
+            font-size: 14.029px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0.421px;
+            margin-bottom: 7px;
+           } 
+        .configure_font--select{
+            width: 90%;
+            height: 26px;
+            flex-shrink: 0;
+            border-radius: 6.965px;
+            background: #EBEBEB;
+            color: black;
+        }
+      
+    }
+
+      }
+ }
 }

@@ -2,8 +2,8 @@ import React, { createContext, useReducer } from 'react';
 
 // Initial state for the counter
 const initialState = { scaleOrientaion: '', 
-color: {btnColor:'',btnBgcolor:'', fntColor:'', sclColor:''},
-scale:{format:'number',width:'',height:'',lblLeft:'unlikely',lblCenter:'likely',lblRight:'most likely',sclRangefromA:'',sclRangetoB:''}
+color: {btnColor:'',btnBgcolor:'', fntColor:'', sclColor:'',confgrFontColor:''},
+scale:{format:'',width:'',height:'',lblLeft:'unlikely',lblCenter:'likely',lblRight:'most likely',sclRangefromA:'',sclRangetoB:'',title:'Help us improve!',question:'How would you rate it?'}
 };
 
 // Reducer function
@@ -20,6 +20,14 @@ const reducer = (state, action) => {
         color: {
           ...state.color,
           btnColor: action.payload,
+        },
+      };
+      case 'SET_CONFGR_FONT_COLOR':
+      return {
+        ...state,
+        color: {
+          ...state.color,
+          confgrFontColor: action.payload,
         },
       };
     case 'SET_BTN_BG_COLOR':
@@ -73,6 +81,16 @@ const reducer = (state, action) => {
           lblRight: action.payload.lblRight,
         },
       };
+
+      case 'SET_CONFIGURE_TITLE_QUESTION':
+        return {
+          ...state,
+          scale: {
+            ...state.scale,
+            title: action.payload.title,
+            question: action.payload.question,
+          },
+        };
     case 'SET_SCALE_RANGE':
       return {
         ...state,
